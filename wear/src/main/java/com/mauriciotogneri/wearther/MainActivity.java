@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.wearable.view.WatchViewStub;
+import android.support.wearable.view.WearableListView;
+import android.support.wearable.view.WearableListView.OnScrollListener;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Toast;
 
 import com.mauriciotogneri.common.api.Forecast;
@@ -23,6 +26,12 @@ public class MainActivity extends Activity implements WearableEvents
     private String nodeId = "";
     private WearableConnectivity connectivity;
 
+    private View progressBar;
+    private View content;
+    private View header;
+
+    private ForecastAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -35,15 +44,61 @@ public class MainActivity extends Activity implements WearableEvents
             @Override
             public void onLayoutInflated(WatchViewStub stub)
             {
-                connectivity = new WearableConnectivity(MainActivity.this, MainActivity.this);
-                connectivity.connect();
+                onLoad();
             }
         });
     }
 
+    private void onLoad()
+    {
+        progressBar = findViewById(R.id.progress_bar);
+        content = findViewById(R.id.content);
+        header = findViewById(R.id.header);
+
+        progressBar.setVisibility(View.VISIBLE);
+        content.setVisibility(View.GONE);
+
+        adapter = new ForecastAdapter(this);
+
+        WearableListView list = (WearableListView) findViewById(R.id.list);
+        list.setAdapter(adapter);
+        list.addOnScrollListener(new OnScrollListener()
+        {
+            @Override
+            public void onAbsoluteScrollChange(int i)
+            {
+                if (i > 0)
+                {
+                    header.setY(-i);
+                }
+            }
+
+            @Override
+            public void onScroll(int i)
+            {
+            }
+
+            @Override
+            public void onScrollStateChanged(int i)
+            {
+            }
+
+            @Override
+            public void onCentralPositionChanged(int i)
+            {
+            }
+        });
+
+        connectivity = new WearableConnectivity(this, this);
+        connectivity.connect();
+    }
+
     private void display(List<Forecast> forecasts)
     {
-        // TODO
+        progressBar.setVisibility(View.GONE);
+        content.setVisibility(View.VISIBLE);
+
+        adapter.setData(forecasts);
     }
 
     @Override

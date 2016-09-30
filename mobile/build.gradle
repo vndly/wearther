@@ -38,4 +38,6 @@ dependencies
 {
     compile project(':common')
     wearApp project(':wear')
+
+    compile 'com.google.code.gson:gson:2.7'
 }

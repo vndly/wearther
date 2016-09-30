@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.annotation.NonNull;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -50,7 +51,7 @@ public class WearableConnectivity
         }).addOnConnectionFailedListener(new OnConnectionFailedListener()
         {
             @Override
-            public void onConnectionFailed(ConnectionResult result)
+            public void onConnectionFailed(@NonNull ConnectionResult result)
             {
                 wearableEvents.onConnectedFail();
             }
@@ -105,7 +106,7 @@ public class WearableConnectivity
                         pendingResult.setResultCallback(new ResultCallback<Status>()
                         {
                             @Override
-                            public void onResult(Status status)
+                            public void onResult(@NonNull Status status)
                             {
                                 if (status.isSuccess())
                                 {

@@ -36,7 +36,9 @@ public class WearableService extends WearableListenerService
         ArrayList<Forecast> result = new ArrayList<>();
 
         // TODO
-        result.add(new Forecast(12, 24, 60, "Sunny"));
+        result.add(new Forecast("Monday", 12, 24, 60, "Sunny"));
+        result.add(new Forecast("Tuesday", 10, 22, 70, "Rainy"));
+        result.add(new Forecast("Wednesday", 15, 30, 80, "Normal"));
 
         reply(Messages.resultWeather(nodeId, result));
     }
