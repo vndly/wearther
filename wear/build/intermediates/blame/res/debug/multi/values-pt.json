@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "/home/max/github/wearther/wear/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt/values-pt.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 91,
+                    "endOffset": 142
+                },
+                "from": {
+                    "file": "/home/max/github/wearther/wear/build/intermediates/exploded-aar/com.google.android.support/wearable/1.4.0/res/values-pt/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 256,
+                        "endColumn": 91,
+                        "endOffset": 343
+                    }
+                }
+            }
+        ]
+    }
+]

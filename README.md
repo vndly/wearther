@@ -1,2 +1,2 @@
-# wearther
-Weather info for Android Wear
+# Wearther
+Weather info for Android Wear.
