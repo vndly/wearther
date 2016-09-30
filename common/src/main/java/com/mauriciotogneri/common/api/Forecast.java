@@ -1,8 +1,7 @@
 package com.mauriciotogneri.common.api;
 
 import android.content.Context;
-
-import com.mauriciotogneri.common.R;
+import android.content.res.Resources;
 
 import java.io.Serializable;
 
@@ -40,7 +39,15 @@ public class Forecast implements Serializable
 
     public String icon(Context context)
     {
-        // TODO: based on code
-        return context.getString(R.string.icon_test);
+        if ((code >= 0) && (code <= 47))
+        {
+            Resources res = context.getResources();
+
+            return res.getString(res.getIdentifier("icon_" + code, "string", context.getPackageName()));
+        }
+        else
+        {
+            return null;
+        }
     }
 }

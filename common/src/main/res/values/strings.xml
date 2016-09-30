@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="icon_test">\uf002</string>
+    <string name="icon_0">\uf056</string>
+    <string name="icon_1">\uf00e</string>
+    <string name="icon_2">\uf073</string>
+    <string name="icon_3">\uf01e</string>
+    <string name="icon_4">\uf01e</string>
+    <string name="icon_5">\uf017</string>
+    <string name="icon_6">\uf017</string>
+    <string name="icon_7">\uf017</string>
+    <string name="icon_8">\uf015</string>
+    <string name="icon_9">\uf01a</string>
+    <string name="icon_10">\uf015</string>
+    <string name="icon_11">\uf01a</string>
+    <string name="icon_12">\uf01a</string>
+    <string name="icon_13">\uf01b</string>
+    <string name="icon_14">\uf00a</string>
+    <string name="icon_15">\uf064</string>
+    <string name="icon_16">\uf01b</string>
+    <string name="icon_17">\uf015</string>
+    <string name="icon_18">\uf017</string>
+    <string name="icon_19">\uf063</string>
+    <string name="icon_20">\uf014</string>
+    <string name="icon_21">\uf021</string>
+    <string name="icon_22">\uf062</string>
+    <string name="icon_23">\uf050</string>
+    <string name="icon_24">\uf050</string>
+    <string name="icon_25">\uf076</string>
+    <string name="icon_26">\uf013</string>
+    <string name="icon_27">\uf031</string>
+    <string name="icon_28">\uf002</string>
+    <string name="icon_29">\uf031</string>
+    <string name="icon_30">\uf002</string>
+    <string name="icon_31">\uf02e</string>
+    <string name="icon_32">\uf00d</string>
+    <string name="icon_33">\uf083</string>
+    <string name="icon_34">\uf00c</string>
+    <string name="icon_35">\uf017</string>
+    <string name="icon_36">\uf072</string>
+    <string name="icon_37">\uf00e</string>
+    <string name="icon_38">\uf00e</string>
+    <string name="icon_39">\uf00e</string>
+    <string name="icon_40">\uf01a</string>
+    <string name="icon_41">\uf064</string>
+    <string name="icon_42">\uf01b</string>
+    <string name="icon_43">\uf064</string>
+    <string name="icon_44">\uf00c</string>
+    <string name="icon_45">\uf00e</string>
+    <string name="icon_46">\uf01b</string>
+    <string name="icon_47">\uf00e</string>
 
 </resources>
