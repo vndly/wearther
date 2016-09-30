@@ -16,6 +16,7 @@ import com.mauriciotogneri.common.api.Message;
 import com.mauriciotogneri.common.api.MessageApi.Messages;
 import com.mauriciotogneri.common.api.MessageApi.Paths;
 import com.mauriciotogneri.common.utils.Serializer;
+import com.mauriciotogneri.common.widgets.Fonts;
 import com.mauriciotogneri.wearther.WearableConnectivity.OnDeviceNodeDetected;
 import com.mauriciotogneri.wearther.WearableConnectivity.WearableEvents;
 
@@ -37,6 +38,8 @@ public class MainActivity extends Activity implements WearableEvents
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Fonts.init(this);
 
         WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener()

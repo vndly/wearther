@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="font" format="string">
+        <enum name="weathericons" value="0"/>
+    </attr>
+
+    <declare-styleable name="CustomTextView">
+        <attr name="font"/>
+    </declare-styleable>
+
+</resources>

@@ -1,5 +1,7 @@
 package com.mauriciotogneri.common.api;
 
+import android.content.Context;
+
 import com.mauriciotogneri.common.R;
 
 import java.io.Serializable;
@@ -36,8 +38,9 @@ public class Forecast implements Serializable
         return description;
     }
 
-    public int icon()
+    public String icon(Context context)
     {
-        return R.drawable.sunny;
+        // TODO: based on code
+        return context.getString(R.string.icon_test);
     }
 }

@@ -2,7 +2,6 @@ package com.mauriciotogneri.wearther;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mauriciotogneri.common.api.Forecast;
@@ -19,7 +18,7 @@ public class ForecastAdapter extends BaseAdapter<Forecast, ForecastViewHolder>
     protected synchronized void fill(Forecast forecast, ForecastViewHolder viewHolder)
     {
         viewHolder.date.setText(forecast.date());
-        viewHolder.icon.setImageResource(forecast.icon());
+        viewHolder.icon.setText(forecast.icon(getContext()));
         viewHolder.temperature.setText(forecast.temperature());
         viewHolder.description.setText(forecast.description());
     }
@@ -39,7 +38,7 @@ public class ForecastAdapter extends BaseAdapter<Forecast, ForecastViewHolder>
     public static class ForecastViewHolder extends BaseViewHolder<Forecast>
     {
         public final TextView date;
-        public final ImageView icon;
+        public final TextView icon;
         public final TextView temperature;
         public final TextView description;
 
@@ -48,7 +47,7 @@ public class ForecastAdapter extends BaseAdapter<Forecast, ForecastViewHolder>
             super(itemView);
 
             this.date = (TextView) itemView.findViewById(R.id.date);
-            this.icon = (ImageView) itemView.findViewById(R.id.icon);
+            this.icon = (TextView) itemView.findViewById(R.id.icon);
             this.temperature = (TextView) itemView.findViewById(R.id.temperature);
             this.description = (TextView) itemView.findViewById(R.id.description);
         }
