@@ -19,6 +19,17 @@ android
         versionName "0.0.1"
     }
 
+    signingConfigs
+    {
+        release
+        {
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+            storePassword RELEASE_STORE_PASSWORD
+            storeFile file(RELEASE_STORE_FILE)
+        }
+    }
+
     compileOptions
     {
         sourceCompatibility JavaVersion.VERSION_1_7
@@ -29,7 +40,7 @@ android
     {
         release
         {
-            minifyEnabled false
+            signingConfig signingConfigs.release
         }
     }
 }
