@@ -2,6 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
@@ -11,28 +12,34 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
             android:layout_marginRight="10dp"
             android:textColor="#777777"
-            android:textSize="14sp"/>
+            android:textSize="16sp"
+            tools:text="Fri"/>
 
         <com.mauriciotogneri.common.widgets.CustomTextView
             android:id="@+id/icon"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:textColor="#777777"
-            android:textSize="22sp"
-            custom:font="weathericons"/>
+            android:textSize="24sp"
+            custom:font="weathericons"
+            tools:text="ICON"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
             android:layout_marginLeft="10dp"
             android:orientation="vertical">
 
@@ -41,14 +48,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#777777"
-                android:textSize="14sp"/>
+                android:textSize="16sp"
+                tools:text="10º/22º"/>
 
             <TextView
                 android:id="@+id/description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#777777"
-                android:textSize="14sp"/>
+                android:textSize="12sp"
+                tools:text="Sunny"/>
 
         </LinearLayout>
 

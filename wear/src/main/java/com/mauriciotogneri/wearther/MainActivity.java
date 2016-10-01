@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.wearable.view.WatchViewStub;
 import android.support.wearable.view.WearableListView;
-import android.support.wearable.view.WearableListView.OnScrollListener;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
@@ -26,11 +25,8 @@ public class MainActivity extends Activity implements WearableEvents
 {
     private String nodeId = "";
     private WearableConnectivity connectivity;
-
     private View progressBar;
-    private View content;
-    private View header;
-
+    private WearableListView list;
     private ForecastAdapter adapter;
 
     @Override
@@ -55,42 +51,14 @@ public class MainActivity extends Activity implements WearableEvents
     private void onLoad()
     {
         progressBar = findViewById(R.id.progress_bar);
-        content = findViewById(R.id.content);
-        header = findViewById(R.id.header);
+        list = (WearableListView) findViewById(R.id.list);
 
         progressBar.setVisibility(View.VISIBLE);
-        content.setVisibility(View.GONE);
+        list.setVisibility(View.GONE);
 
         adapter = new ForecastAdapter(this);
 
-        WearableListView list = (WearableListView) findViewById(R.id.list);
         list.setAdapter(adapter);
-        list.addOnScrollListener(new OnScrollListener()
-        {
-            @Override
-            public void onAbsoluteScrollChange(int i)
-            {
-                if (i > 0)
-                {
-                    header.setY(-i);
-                }
-            }
-
-            @Override
-            public void onScroll(int i)
-            {
-            }
-
-            @Override
-            public void onScrollStateChanged(int i)
-            {
-            }
-
-            @Override
-            public void onCentralPositionChanged(int i)
-            {
-            }
-        });
 
         connectivity = new WearableConnectivity(this, this);
         connectivity.connect();
@@ -99,7 +67,7 @@ public class MainActivity extends Activity implements WearableEvents
     private void display(List<Forecast> forecasts)
     {
         progressBar.setVisibility(View.GONE);
-        content.setVisibility(View.VISIBLE);
+        list.setVisibility(View.VISIBLE);
 
         adapter.setData(forecasts);
     }
